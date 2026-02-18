@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="style1.css?v=1.0">
+ <!-- font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,300;1,14..32,300&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Megrim&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackrose laboratories</title>
+<style>
+
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: rgb(8,8,8);
+    color: white;
+  }
+
+
+  
+</style>
+</head>
+<body>
+
+  <div class="parallax-container">
+    <img src="BlackRose_Black.png" alt="Logo" class="parallax-logo">
+    <h1 class="parallax-text">Blackrose laboratories</h1>
+  </div>
+
+<div class="black-spacer"></div>
+
+<div id="quoteSpace"></div>
+<script>
+  const quote = [
+    '"Chazz Michael Michaels is skating."<br><br> - Blades of Glory',
+    '"They’ve done studies, you know. 60% of the time, it works every time."<br><br> -Brian Fantana',
+    '"I Scolded Leonard Today, So According To Greendale Bylaws, I Now Have to Grant Him Three Wishes." <br><br> -Dean Craig Pelton',
+    '"Shake and BaKe!"<br><br> -Ricky Bobby'
+  ];
+  const randomIndex = Math.floor(Math.random()* quote.length);
+  document.getElementById("quoteSpace").innerHTML = quote[randomIndex];
+</script>
+
+  
+  <div class="black-spacerS"></div>
+
+  <div class = "SitichesLink">
+    <P> View the current projects:</P>
+        <div class="black-spacerXS"></div>
+      <div class ="LinkToStitches">
+    <a href="stitches.html".html">Stitching Robot</a>
+    </div>
+  <div>
+
+ <div class="black-spacer"></div>
+
+  <footer class="site-footer">
+    <p>© 2026 Blackrose Laboratories</p>
+    <a href="Blackrose-Contact.html">Contact</a>
+    <a href="links.html".html">Links</a>
+  </footer>
+
+
+  <script>
+    const text = document.querySelector(".parallax-text");
+    const logo = document.querySelector(".parallax-logo");
+
+    const textStartY = 200; 
+    const textSpeed = 0.65;
+    const logoSpeed = 0.3;
+
+    function updateParallax() {
+      const scrollY = window.scrollY;
+
+      if (logo) {
+        logo.style.transform = `translate(-50%, ${scrollY * logoSpeed}px)`;
+      }
+
+
+      if (text) {
+        text.style.transform = `translate(-50%, ${textStartY + scrollY * textSpeed}px)`;
+      }
+    }
+
+
+    window.addEventListener("scroll", updateParallax);
+
+    updateParallax();
+  </script>
+
+</body>
+</html>

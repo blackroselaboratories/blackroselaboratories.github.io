@@ -1,0 +1,202 @@
+body {
+   background-color: rgb(8, 8, 8); 
+    color:white;
+    font-weight: 100;
+
+
+}
+.parallax-text {
+    color:white;
+    top: -5%;
+    font-weight: 500;
+    font-size: 900%;
+  font-family:  "Anta", "Baumans", "Tulpen One", "ZCOOL QingKe HuangYou", "gugi", "Megrim",  "Tourney", "Inter",   "Helvetic Neue";
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+        position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* this can defualt to 3rem, 10vw, 6rem*/
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 400;
+    color: white;
+    z-index: 2;
+
+
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+#quoteSpace {
+  position: absolute;
+  margin-top: 7px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  max-width: 6000px;
+  font-family:  "Tourney","gugi", " Baumans" ,'Courier New', Courier, monospace;
+}
+
+/*/
+link page start
+/*/
+.linksTittle{
+  color: white;
+  font-size: 2.5rem;
+  margin: 50px auto;  
+  padding: 20px;
+  text-align: center; 
+  border-radius: 8px;
+}
+
+.linksText a {
+  color: white;
+  font-size: 3rem;
+  margin: 50px auto;  
+  padding: 10px;
+  text-align: center; 
+  border-radius: 8px;
+}
+
+.linksText{
+
+  color: white;
+  font-size: 3rem;
+  margin: 50px auto;  
+  padding: 0px;
+  text-align: center; 
+  border-radius: 8px;
+}
+
+.postLinksText{
+    color: white;
+  font-size: 1.5rem;
+  margin: 50px auto;  
+  padding: 65px;
+  text-align: center; 
+  border-radius: 8px;
+}
+
+.home-button a{
+  position: fixed;
+  top: 3%;
+  left: 1.5%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-logo{
+  width: 100%;
+  height: 100%;
+  transition: transform .85s ease;
+}
+
+.home-button:hover .home-logo{
+  transform: translateY(-30px) rotate(360deg);
+}
+
+
+  .home button a {
+    display: inline-block;
+  }
+
+/*/
+link page end
+/*/
+.black-spacer{
+    height: 1000px;
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+}
+.black-spacerS{
+    height: 500px;
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+}
+
+.black-spacerXS{
+    height: 50px;
+    background-color: rgb(8, 8, 8);
+    width: 100%;
+}
+.site-footer {
+    margin-top: 500px;
+    max-width: 6000px;
+  
+}
+ .parallax-logo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: visible;
+  }
+
+  .body-text {
+    max-width: 800px;
+    margin: 100px auto; 
+    padding: 0 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+ /* link*/
+  .site-footer {
+    text-align: center;
+    padding: 2px 0; 
+    margin: 0;        
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    max-width: 6000px;
+  }
+
+  .site-footer a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  .LinkToStitches a{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+    .SitichesLink {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  /*
+  .site-footer:hover {
+  text-decoration: underline;
+  display: inline-block;
+}
+  */

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stitches.css">
+   <title>Stitching Robot</title>
+   
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Megrim&display=swap" rel="stylesheet">
+
+        <div class="home-button">
+        <a href="index.html">
+        <img src="blackrose_transparent.png" alt = "Home logo" class="home-logo">
+        </a>
+     </div>
+   <h1> Stitching Robot</h1>
+   <p>This project is as the name suggests a robot that can give stitches. This is </p>
+
+
+
+  <main>
+
+    <!-- Project Overview -->
+    <section id="plan">
+      <h2>My Plan</h2>
+
+  <p>This project is as the name suggests a robot that can give stitches. This is obviously a very complicated project and there are a ton of elements that I still am not fully sure how they will work.</p>
+
+  <p>By the time of completion, the robot should be able to do the following</p>
+
+  <ul>
+    <li>Recognise a cut</li>
+    <li>Identify key points along the side of the cut</li>
+    <li>Track position data of the cut</li>
+    <li>Update position data continuously via accelerometers and visual capture points</li>
+    <li>Hold the cut shut for long enough to apply permanent fix</li>
+    <li>Seal the cut</li>
+  </ul>
+
+  <p>Now this is a lot to manage so here is my rough plan for how each element will work but many of these will likely change</p>
+
+  <p>All visual processing will be done via a laptop running a python script that uses both open cv as well as you only look once (YOLO) which will be able to scan the cut</p>
+
+  <p>The user will wear at least one arm band that will contain accelerometers as well as motion capture points to aid in tracking. Once the computer understands where the cut is relative to the capture points and can update micromovements from there.</p>
+
+  <p>Once the computer knows where the cut is it can move in and start the stitching process with an assortment of tools. All of which will be mounted to the frame of a broken ender 3d printer which will be build into a cage that can hold it up so it’s able to move around the cut.</p>
+
+  <p>From here the computer can choose any number the following options</p>
+
+  <ul>
+    <li>Apply specialized butterfly stitches. I have this idea to use a hot end style system that can melt down a polymer (at a very low temperature) and use that to hold the cut shut temporarily. (This obviously wont last long which is where one of the following comes in)</li>
+    <li>Lazer welder. Yes this sounds really dumb but I think with proper usage the ability to cauterize tiny line segments along a cut could be useful. Naturally this, much like most of this project, will require significantly more research.</li>
+    <li>I also want to experiment with a sprayable surgical glue. This would be able to seal the cut and allow clotting to take its place. This issue here of course being that not all cuts should be sealed. So I’ll need to teach the computer to recognize the type of cut or at least ask the user how the cut occurred.</li>
+  </ul>
+
+  <h2>My Current Progress</h2>
+
+  <p>I decided to start on the software side of this system because that’s what I’m less confident with and it should give me a good idea of what is feasible and what isn’t.</p>
+
+  <p>This is actually my first time working in open CV and I’m surprised at how well things went at first. I started with some simple color detection and that worked fine so I moved on to some more complex parts.</p>
+
+  <p>The computer needs to be able to tell what is a cut and what is not so for this I had to move to some machine learning. My original plan was to use Google's teachable machine software because I’ve used it before and it’s extremely simple. But a quick sweep of its feature set revealed this wasn’t going to workout. So I did a little more digging and found a software called you only look once (YOLO) which works well with python. But in order to teach a computer what a cut looks like I needed tons of images of them. Because cuts come in all shapes and sizes I decided for the first version of my software I would only focus on a simple straight cut along a person's arm. But if you go online you might find about 20 photos of this type of cut, for this I would need roughly 800 at a minimum.</p>
+
+  <p>Now it’s frowned upon to stab yourself in the arm for your computer science projects so I went with the next best plan of making a fake cut. I used some candle wax, ketchup, and tomato sauce to make what I think looked like a pretty good cut. (Yes I probably could have gone to the store and bought better materials but I was having fun with the DIY aspect) Then I took a bunch of videos of my arm from all different angles in all different lights. As well as some videos of my arm with no cut which is very important to teach the computer what it’s not looking for.</p>
+
+  <p>I then brought all the videos into python from here and broke them apart frame by frame. This left me with just over 800 photos. My first choice for a highlighting software wasn't working so I used a browser based one known as Roboflow. I spent the next hour and a half going into every image and selecting the cut. After I exported all of the images with matching location files of each cut. After mixing all of the cut and no cut images into their training and validation folders I handed it off to YOLO to train the model. This didn’t take too long although my computer did seem ready to explode the whole time. It then returned to me with a bunch of data on the model's accuracy as well as my model to use.</p>
+ 
+<div class = "textAndImage">
+ <img src="val_batch0_pred.jpg" class = "stitchesPhotos">
+    <div class = "nextToImage"> 
+        <p> Here is one of the taining test that was given back to me.</p>
+        <p> I understad that the cut looks awful in these photos. I promise that it didn't look like this in person.</p>
+    </div>
+</div>
+
+  <p>I plugged this into python and after a little workshopping I got it working, sort of.</p>
+
+  <p>I haven’t gotten back to workshopping but my best guess is that while the cut I trained it on showed big red splotches I need to narrow it down to include more skin that a cut ready for stitching would include. Before whoever reads this looks at the pictures and laughs at me just know I did kind of expect this but I was having fun making my own cut even if I’m bad at it.</p>
+
+  <p>I’m not 100% convinced that is the only problem due to it’s current recognition abilities. I would assume there is also some code issue. Regardless I’ll spend the next day or so finding and labeling more realistic images for the data set and retrain with a mix of the two.</p>
+
+</body>
+</html>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Blackrose Laboratories</p>
+  </footer>
+   
+</body>
+</html>
