@@ -10,7 +10,7 @@ body {
     top: -5%;
     font-weight: 500;
     font-size: 900%;
-  font-family:  "Anta", "Baumans", "Tulpen One", "ZCOOL QingKe HuangYou", "gugi", "Megrim",  "Tourney", "Inter",   "Helvetic Neue";
+  font-family: "Baumans","gugi", "Megrim",  "Tourney", "Inter",   "Helvetic Neue";
     white-space: nowrap;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -40,7 +40,7 @@ body {
   margin: 0;
   padding: 0;
   max-width: 6000px;
-  font-family:  "Tourney","gugi", " Baumans" ,'Courier New', Courier, monospace;
+  font-family:  "Tourney",'Courier New', Courier, monospace;
 }
 
 /*/
@@ -130,11 +130,7 @@ link page end
     background-color: rgb(8, 8, 8);
     width: 100%;
 }
-.site-footer {
-    margin-top: 500px;
-    max-width: 6000px;
-  
-}
+
  .parallax-logo {
     position: absolute;
     top: 30%;
@@ -164,7 +160,6 @@ link page end
  /* link*/
   .site-footer {
     text-align: center;
-    padding: 2px 0; 
     margin: 0;        
     font-size: 1.5rem;
     display: flex;
@@ -173,6 +168,8 @@ link page end
     width: 50%;
     margin: 0 auto;
     max-width: 6000px;
+    font-family: serif;
+
   }
 
   .site-footer a {
@@ -192,6 +189,7 @@ link page end
     text-align: center;
     color: white;
     font-size: 2.5rem;
+    font-family:  "Anta", 'Courier New', Courier, monospace;
   }
 
   /*
@@ -200,3 +198,5 @@ link page end
   display: inline-block;
 }
   */
+
+

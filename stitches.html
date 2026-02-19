@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stitches.css">
    <title>Stitching Robot</title>
-   
+   <link rel="icon" type="image/svg+xml" href="blackrose_transparent (1).svg">
 </head>
 <body>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,5 +92,31 @@
     <p>© 2026 Blackrose Laboratories</p>
   </footer>
    
+    <script>
+    const text = document.querySelector(".parallax-text");
+    const logo = document.querySelector(".parallax-logo");
+
+    const textStartY = 200; 
+    const textSpeed = 0.65;
+    const logoSpeed = 0.3;
+
+    function updateParallax() {
+      const scrollY = window.scrollY;
+
+      if (logo) {
+        logo.style.transform = `translate(-50%, ${scrollY * logoSpeed}px)`;
+      }
+
+
+      if (text) {
+        text.style.transform = `translate(-50%, ${textStartY + scrollY * textSpeed}px)`;
+      }
+    }
+
+
+    window.addEventListener("scroll", updateParallax);
+
+    updateParallax();
+  </script>
 </body>
 </html>
