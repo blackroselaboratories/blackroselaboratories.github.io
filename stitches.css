@@ -11,6 +11,7 @@ body{
     margin-right: 2%;
     margin-top: 2%;
     font-family: "open sans";
+     overflow-x: hidden;
 }
 
 .nextToImage{
@@ -36,4 +37,5 @@ body{
   transform: translateY(-30px) rotate(360deg);
  
 }
+
 
