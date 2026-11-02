@@ -32,7 +32,7 @@
     <p>This is pretty easy</p>
 
     <p>Step three: Order a bunch of crap online</p>
-    <p>It's going to take weeks to ship. Luckily in the mean time you can go to:</p>
+    <p>Mostly what you need is a Raspberry pi 0 like a cool tiny computer. It's going to take weeks to ship. Luckily in the mean time you can go to:</p>
     
     <p>Step four:</p>
     <p>So the real walkmans used magnetic tapes to store music. It’s really amazing how they pulled it off. If you ever want to be amazed look up how a cassette tape is manufactured. Anyways I can’t pull something like that off cause I’m not good at my job or something. But I can cheat at it. Because I have something the 80s didn’t. Tiny computers. By using a small digital system I can bypass the need for cassette tapes all together. So my plan is to make small 3d printed cassette style devices and put an NFC tag inside each one. Now when I was first planning this I didn’t know that people didn’t print cover art onto the cassettes like they did record sleeves but I’d already committed to a much cooler plan than boring plastic rectangles. Now my plan was to quickly make one cassette and print some art onto it just to have something to test off of. But I got really carried away making these and I made way too many so here’s all my work on each album. Along with my thoughts on the albums because why not.
@@ -40,12 +40,21 @@
 
     <p>(Note I used photoshop for the first few albums but switched over to Photopea because it actually works consistently. Though it sends me sad messages asking why I’m using an ad blocker which I’m not so don’t be guilt tripped by them)
 </p>
+    <p>- The basic technique I use for each album cover is to break it into its colors with Photopea and convert each colored shape into an SVG file which I can then pull into Fusion 360 and build out onto the cassette template before printing each layer on top of a different color. Then I added pegs to the back so I can connect two cassettes making them double sided.
+</p>
     <p><strong>American Idiot</strong></p>
 
     <p>This is the first one I made so I wasn’t very efficient in the timelapse but it still came out quite well for being the first one. Now this is the greatest album ever created and there’s not really much more to say. I’m very happy with how it came out.</p>
          <img src="images/IMG_3982.jpeg" class = "stitchesPhotos">
 
             <iframe width="700" height="393.75" src="https://www.youtube.com/embed/U8RaLtV6NeU?si=YFf8XdTLTYJ1denD&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p><strong>Paramore</strong></p>
+
+    <p>This one came out pretty well though my printer had some trouble with the thinner lines. Great album.</p>   
+         <img src="images/IMG_3985.jpeg" class = "stitchesPhotos">
+         <iframe width="700" height="393.75" src="https://www.youtube.com/embed/APShQkZZQ0Y?si=ZAfuuN0RjcwjqHUl&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+
     <p><strong>21st Century Breakdown</strong></p>
 
     <p>I’m also very happy with how the art for this one came out. It looks very nice and it’s a wonderful album.</p>
@@ -82,13 +91,8 @@
     </p>
          
           <img src="images/IMG_3986.jpeg" class = "stitchesPhotos">
-    <p><strong>Paramore</strong></p>
-
-    <p>This one came out pretty well though my printer had some trouble with the thinner lines. Great album.</p>   
-         <img src="images/IMG_3985.jpeg" class = "stitchesPhotos">
-         <iframe width="700" height="393.75" src="https://www.youtube.com/embed/APShQkZZQ0Y?si=ZAfuuN0RjcwjqHUl&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
     <p><strong>Direct Hits </strong></p>
-
     <p>I keep forgetting to print this one so I’ll put in a photo when it’s done. Great album.</p>
           
         <img src="images/Screenshot 2026-10-31 155707.png" class = "stitchesPhotos">
@@ -98,7 +102,66 @@
          <img src="images/Screenshot 2026-10-31 155614.png" class = "stitchesPhotos">  
         
     <p>Step five:</p>
-    <p>Now I'm still in the process of finilising this project so to avoid spreading lies before I know what I'm going to do. I will be updating the rest of this in the next few days.</p>
-   
+    <p>So now I need some way to control the device, normally you control a walkman with three highly tactile push buttons on the side each of which moves a
+         mechanical system inside the device. Now these buttons have such a nice mechanical feel that would be destroyed if I tried to 
+         integrate digital buttons. So I tried something that had no business working as well as it did. I built these small 3d printer 
+         pegs each of which holds a conductive spring connected to a wire. These springs are angled 
+        so when the mechanical system inside the walkman moves as a result of a button being pushed
+         it contacts the mounted spring. This way by connecting the spring to a GPIO pin and grounding the metal frame of the device 
+         I can detect which button is pressed at any time.</p>
+
+         <img src="images/IMG_3994.jpeg" class = "stitchesPhotos">  
+         <img src="images/IMG_3995.jpeg" class = "stitchesPhotos">  
+         <img src="images/IMG_3996.jpeg" class = "stitchesPhotos">  
+
+
+
+     <p>step six:</p> 
+     <p>As for playing audio, it’s not hard, you just buy two adapters (micro usb to usb c then usb c to aux)
+         (there is a way to do this with audio via GPIO pins but it wasn’t working) and all of the 
+         sudden you can plug a pair of headphones into your raspberry pi. Now the only issue with this 
+         is that the aux adapter doesn’t look very good so I had to build one more adapter to play audio
+          directly from the Walkman’s aux port. To do this I just cut the aux cable off of an old broken pair 
+          of earbuds, burned the end of the exposed wire to get rid of enamel and soldered those connectors into 
+          the exposed pins on the back of the walkman's pcb. All this really did is connect audio into the walkman’s original
+           aux port but it works. (Important note I don’t recommend doing this but if you are going to connect cables to a 
+           pre-existing PCB make sure you don’t charge capacitors as they 
+        can explode and do not try this if you don’t know what you are doing.)</p>  
+
+    <img src="images/IMG_3999.jpeg" class = "stitchesPhotos">
+
+    <p>step seven:</p>
+    <p>Now where do you get music from? Well some people would pirate their songs but that’s illegal. So I went with 
+        the slightly less illegal route and might have copied some
+         CDs onto an old desktop running as a server then sent them over to my raspberry pi. </p>
+
+   <p>step eight:</p>
+   <p>As for controlling the audio, the Walkman has a volume knob which I’d like to keep. However the analog 
+    walkman uses an analog potentiometer (little device that you can spin to change the resistance inside like a tiny light dimmer) 
+    to physically control the power flow. The raspberry pi can’t read data from an analog device so I’ll never this thing called a
+     mcp3008 it’s basically a little translator that can read the analog data (resistance created from the potentiometer) from the
+      potentiometer and translate it into digital data (1s and 0s) that the computer can read. After a ton of soldering it does 
+      technically work but the data drifts so much. To the point where over the course of a four minute song it might turn up the 
+      volume by 20% on its own (I found this out when Longview’s bass line almost blew out my ears). What I came to find out is that 
+      I forgot to disconnect the rest of the PCB and I was likely charging capacitors as I connected the volume dial which was throwing
+       off the volume reading. To be clear, I'm lucky that this didn’t explode. I'm also really dumb. So I broke all connections and it’s
+        working much better now, 
+    there is still a slight drift but not so  I can likely write them out in software. </p>
+
+    <img src="images/img 4002.jpg" class = "stitchesPhotos" style="width: 380px; height: auto;">
+    <img src="images/IMG_4001.jpeg" class = "stitchesPhotos" style="width: 400px; height: auto;">
+    <img src="images/IMG_4002.jpeg" class = "stitchesPhotos" style="width: 578px; height: auto;">
+
+    <p>step nine:</p>
+    <p>Now to be able to read which cassette is in the player I need an NFC reader to read the NFC tag inside each cassette. 
+        I don’t have too much to say, I wired this up and made some room for it and it can detect each tag. Side note, it takes way
+         too long to read the tag data inside each tag every time one is inserted so what happens is each time a new tag is put into 
+         the device it reads the album name from the NFC tag and saves the much faster to read tag id. 
+        This way the next time that tag is interred I can simply read the id number and call up that album. Now I understand this wiring looks awful I still need to work on sealing that but it works.</p>
+    <img src="images/IMG_3997.jpeg" class = "stitchesPhotos">
+
+    <p>Step ten:</p>     
+    <p>Now I'm still in the process of finilising this project so to avoid spreading lies 
+        before I know what I'm going to do. I will be updating the rest of this in the next few days.</p>
 </body>
 </html>
